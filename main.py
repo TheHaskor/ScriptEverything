@@ -42,6 +42,7 @@ def threaded_func(threaded_function, *args, **kwargs):
 
 
 def timer(minutes=5, times=1):
+    """SE: timer - defualt 5 minutes"""
     threaded_func(timer_helper, minutes=minutes, times=times)
 
 
@@ -54,7 +55,9 @@ def work(browser='chrome'):
 
 
 def lofi(browser='chrome'):
-    urls = ['https://www.youtube.com/watch?v=5qap5aO4i9A&ab_channel=LofiGirl',
+    """SE: opens lofi music"""
+    urls = ['https://www.google.co.il/?hl=iw',
+            'https://www.youtube.com/watch?v=5qap5aO4i9A&ab_channel=LofiGirl',
             'https://www.google.co.il/?hl=iw']
     open_urls(browser, urls)
 
