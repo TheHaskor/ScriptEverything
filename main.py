@@ -3,6 +3,11 @@ from threading import Thread
 import time
 import winsound
 
+from pynput.keyboard import Key, Controller
+keyboard = Controller()
+from pynput.mouse import Button, Controller
+mouse = Controller()
+
 import webbrowser
 chrome_path = r"C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe"
 
@@ -60,6 +65,21 @@ def lofi(browser='chrome'):
             'https://www.youtube.com/watch?v=5qap5aO4i9A&ab_channel=LofiGirl',
             'https://www.google.co.il/?hl=iw']
     open_urls(browser, urls)
+
+
+def pong(browser='chrome'):
+    """SE: starts a pong game"""
+    def press(key):
+        keyboard.press(key)
+        keyboard.release(key)
+    urls = ['https://www.ponggame.org/']
+    open_urls(browser, urls)
+    time.sleep(1)
+    mouse.scroll(0, -108)
+    time.sleep(1)
+    press('1')
+    press('k')
+    press('h')
 
 
 def open_urls(browser, urls):
