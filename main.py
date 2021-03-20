@@ -53,6 +53,12 @@ def work(browser='chrome'):
     open_urls(browser, work_urls)
 
 
+def lofi(browser='chrome'):
+    urls = ['https://www.youtube.com/watch?v=5qap5aO4i9A&ab_channel=LofiGirl',
+            'https://www.google.co.il/?hl=iw']
+    open_urls(browser, urls)
+
+
 def open_urls(browser, urls):
     webbrowser.register(browser, None, webbrowser.BackgroundBrowser(chrome_path))
     for url in urls:
